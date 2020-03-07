@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+<title>Bookstore - My Account</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- bootstrap 4.0 dependencies -->
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="commons/header :: navbar"></div>
+
+	<div class="container">
+		<div>
+			<div class="home-headline">
+				<span>User Account</span>
+			</div>
+			<hr style="margin-top: -15px; margin-bottom: 50px;" />
+		</div>
+	
+		<form action="#" th:href="@{/signUp}" th:object="${user}" method="post">
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="firstName">First Name</label>
+					<input type="text" class="form-control" id="firstName" placeholder="First Name" th:field="*{firstName}">
+				</div>
+				<div class="form-group col-md-8">
+					<label for="lastName">Last Name</label>
+					<input type="text" class="form-control" id="lastName" placeholder="Last Name" th:field="*{lastName}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="userEmail">Email</label>
+					<input type="email" class="form-control" id="userEmail" placeholder="Email" th:field="*{email}">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="userPassword">Password</label>
+					<input type="password" class="form-control" id="userPassword" placeholder="Password" th:field="*{password}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="userAddress">Address</label>
+				<input type="text" class="form-control" id="userAddress" placeholder="Rua Estância, 309" th:field="*{address}">
+			</div>
+			<div class="form-group">
+				<label for="userComplement">Complement</label> 
+				<input type="text" class="form-control" id="userComplement"
+					placeholder="Apartment, studio, or floor" th:field="*{addressComplement}">
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="userCity">City</label> 
+					<input type="text" class="form-control" id="userCity" th:field="*{city}">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="userState">State</label> 
+					<input type="text" class="form-control" id="userState" th:field="*{state}">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="userZip">Zip</label> 
+					<input type="text" class="form-control" id="userZip" th:field="*{zip}">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Sign Up</button>
+		</form>
+	</div>
+
+	<div th:replace="commons/bottom :: scripts"></div>
+</body>
+</html>
