@@ -86,8 +86,6 @@ public class UserService implements IUserService {
 	}
 	
 	private void sendVerificationEmail(User user) {
-		int a = 10/0;
-		
 		VerificationToken verificationToken = verificationTokenRepository.save(new VerificationToken(user));
         
         emailSenderService.sendEmail(
